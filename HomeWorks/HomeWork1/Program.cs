@@ -28,7 +28,7 @@ Console.Write("Min number is " + min);
 */
 
 
-
+/*
 
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
@@ -40,6 +40,21 @@ int n2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter the third integer: ");
 int n3 = Convert.ToInt32(Console.ReadLine());
 
+int max = n1;
+
+if (max < n2)
+{
+    max = n2;
+}
+if (max < n3)
+{
+    max = n3;
+}
+
+Console.Write("Max number is " + max);
+
+
+*/
 
 
 
