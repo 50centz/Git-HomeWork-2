@@ -32,8 +32,11 @@ else
 
 Console.WriteLine("Input a number: ");
 int a = Convert.ToInt32(Console.ReadLine());
-
-if (a > 99 && a < 1000 )
+if (a > 1000000 || a < -1000000)
+{
+    Console.WriteLine("The program works with numbers from -999999 to 999999");
+}
+if (a > 99 && a < 1000)
 {
     Console.WriteLine(a % 10);
 }
@@ -42,18 +45,18 @@ else if (a < -99 && a > -1000)
     int b = a * -1;
     Console.WriteLine(b % 10);
 }
-else if (a > 1000 && a < 9999 )
+else if (a > 1000 && a < 9999)
 {
     int b = a % 100;
     Console.WriteLine(b / 10);
 }
-else if (a < -100 && a > -9999)
+else if (a < -1000 && a > -9999)
 {
     int b = a * -1;
     int c = b % 100;
     Console.WriteLine(c / 10);
 }
-else if (a > 10000 && a < 99999 )
+else if (a > 10000 && a < 99999)
 {
     int b = a % 1000;
     Console.WriteLine(b / 100);
@@ -64,7 +67,7 @@ else if (a < -10000 && a > -99999)
     int c = b % 1000;
     Console.WriteLine(c / 100);
 }
-else if (a > 100000 && a < 999999 )
+else if (a > 100000 && a < 999999)
 {
     int b = a % 10000;
     Console.WriteLine(b / 1000);
@@ -72,7 +75,7 @@ else if (a > 100000 && a < 999999 )
 else if (a < -100000 && a > -999999)
 {
     int b = a * -1;
-    int c = b % 1000;
+    int c = b % 10000;
     Console.WriteLine(c / 1000);
 }
 else
