@@ -1,4 +1,4 @@
-﻿
+﻿/*
 
 //Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
@@ -22,3 +22,62 @@ else
 {
     Console.WriteLine("It's not a three digit number");
 }
+
+*/
+
+/*
+
+// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+
+Console.WriteLine("Input a number: ");
+int a = Convert.ToInt32(Console.ReadLine());
+
+if (a > 99 && a < 1000 )
+{
+    Console.WriteLine(a % 10);
+}
+else if (a < -99 && a > -1000)
+{
+    int b = a * -1;
+    Console.WriteLine(b % 10);
+}
+else if (a > 1000 && a < 9999 )
+{
+    int b = a % 100;
+    Console.WriteLine(b / 10);
+}
+else if (a < -100 && a > -9999)
+{
+    int b = a * -1;
+    int c = b % 100;
+    Console.WriteLine(c / 10);
+}
+else if (a > 10000 && a < 99999 )
+{
+    int b = a % 1000;
+    Console.WriteLine(b / 100);
+}
+else if (a < -10000 && a > -99999)
+{
+    int b = a * -1;
+    int c = b % 1000;
+    Console.WriteLine(c / 100);
+}
+else if (a > 100000 && a < 999999 )
+{
+    int b = a % 10000;
+    Console.WriteLine(b / 1000);
+}
+else if (a < -100000 && a > -999999)
+{
+    int b = a * -1;
+    int c = b % 1000;
+    Console.WriteLine(c / 1000);
+}
+else
+{
+    Console.WriteLine("There is no third digit");
+}
+
+*/
