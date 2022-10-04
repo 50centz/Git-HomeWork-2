@@ -32,11 +32,12 @@ else
 
 Console.WriteLine("Input a number: ");
 int a = Convert.ToInt32(Console.ReadLine());
+
 if (a > 1000000 || a < -1000000)
 {
     Console.WriteLine("The program works with numbers from -999999 to 999999");
 }
-if (a > 99 && a < 1000)
+else if (a > 99 && a < 1000)
 {
     Console.WriteLine(a % 10);
 }
