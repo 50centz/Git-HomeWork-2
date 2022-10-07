@@ -14,10 +14,12 @@
     return max;
 }
 
-//int number = new Random().Next(10, 100);
-//int biggestDigit = FindBiggestDigit(number);
+/*
+int number = new Random().Next(10, 100);
+int biggestDigit = FindBiggestDigit(number);
 
-//Console.WriteLine($"The biggest digit of {number} is {biggestDigit}");
+Console.WriteLine($"The biggest digit of {number} is {biggestDigit}");
+*/
 
 // Напишите программу, которая выводит случайное трёхзначное число и удаляет вторую цифру этого числа
 
@@ -33,10 +35,12 @@ int TwoDigitNumber(int num)
     return result;
 }
 
-/*int number = new Random().Next(100, 1000);
+/*
+int number = new Random().Next(100, 1000);
 int twoDigitNumber = TwoDigitNumber(number);
 
-Console.WriteLine("Number is: " + twoDigitNumber);*/
+Console.WriteLine("Number is: " + twoDigitNumber);
+*/
 
 
 // напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно a и b.
