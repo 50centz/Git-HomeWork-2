@@ -32,7 +32,7 @@ else
 
 */
 
-
+/*
 
 // Задача 21 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
@@ -57,3 +57,25 @@ double c2 = Convert.ToDouble(Console.ReadLine());
 
 Distance(x1, y1, c1, x2, y2, c2);
 
+*/
+
+
+
+// Задача 23 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N
+
+Console.WriteLine("Input a number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+if (number < 1)
+{
+    Console.WriteLine("The number is incorrect");
+}
+else
+{
+    int a = 1;
+    while (a <= number)
+    {
+        Console.Write(Math.Pow(a, 3) + " ");
+        a++;
+    }
+}
