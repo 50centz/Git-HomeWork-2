@@ -37,6 +37,7 @@ RaiseToADegree(a, b);
 
 void Sum(int number)
 {
+    int c = number;
     int a = 0;
     int b = 0;
     if (number > 0)
@@ -47,7 +48,7 @@ void Sum(int number)
             b = b + a;
             number = number / 10;
         }
-        Console.WriteLine(b);
+        Console.WriteLine($"The sum of the numbers in the number {c} = {b}");
     }
     else
     {
@@ -59,3 +60,4 @@ Console.WriteLine("Input a number: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 Sum(b);
+
