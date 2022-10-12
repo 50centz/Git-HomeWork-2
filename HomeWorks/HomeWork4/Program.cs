@@ -89,3 +89,29 @@ Array(size);
 
 */
 
+
+
+// Задача 29: Напишите программу, которая создаёт массив заданный пользователем и заполнен пользователем.
+
+void CustomArray(int size)
+{
+    int[] array = new int[size];
+
+    if(size < 1) Console.WriteLine("Incorrect size !");
+
+    for (int i = 0; i < size; i++)
+    {
+        Console.WriteLine($"Enter the number {i + 1} of the element: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+
+    for ( int i = 0; i < size; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
+
+Console.WriteLine("Enter the size of the array:");
+int size = Convert.ToInt32(Console.ReadLine());
+
+CustomArray(size);
