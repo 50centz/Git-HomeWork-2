@@ -31,7 +31,7 @@ RaiseToADegree(a, b);
 */
 
 
-
+/*
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
@@ -60,4 +60,32 @@ Console.WriteLine("Input a number: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 Sum(b);
+
+*/
+
+/*
+
+// Задача 29: Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
+
+void Array(int size)
+{
+    int[] array = new int[size]; 
+    int a = new Random().Next(1, 10000);
+    int b = new Random().Next(10000, 1000000000);
+
+    for(int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(a, b);
+        Console.Write(array[i] + " ");
+    }
+    
+
+}
+
+Console.WriteLine("Enter the size of the array:");
+int size = Convert.ToInt32(Console.ReadLine());
+
+Array(size);
+
+*/
 
