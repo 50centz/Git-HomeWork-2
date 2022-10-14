@@ -39,7 +39,7 @@ Console.WriteLine();
 Console.WriteLine("The number of even numbers in the array: " + NumberOfEvenNumbersInTheArray(array));
 */
 
-
+/*
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
 int Sum(int[] array)
@@ -60,3 +60,53 @@ int[] array = CreateArray(size);  // В этом задании, в методе
 PrintArray(array);
 Console.WriteLine();
 Console.WriteLine("The sum of the elements standing in odd positions = " + Sum(array));
+*/
+
+/*
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива
+
+
+double[] CreateNewArray(int size)
+{
+    double[] array = new double[size];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(1, 100000);
+    }
+    return array;
+}
+
+void PrintNewArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
+
+double TheDifferenceBetweenTheMaximumAndMinimumArrayElement(double[] array)
+{
+    double max = array[0];
+    double min = array[0];
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > max) max = array[i];
+    }
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min) min = array[i];
+    }
+
+    double result = max - min;
+    return result;
+}
+
+Console.WriteLine("Input a size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+double[] array = CreateNewArray(size);
+PrintNewArray(array);
+Console.WriteLine();
+Console.WriteLine($"The difference between the maximum and minimum array element = " + TheDifferenceBetweenTheMaximumAndMinimumArrayElement(array));
+*/
