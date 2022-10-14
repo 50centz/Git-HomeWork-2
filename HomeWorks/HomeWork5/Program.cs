@@ -4,7 +4,7 @@
 
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(-1000, 1000);
+        array[i] = new Random().Next(1, 10);
     }
     return array;
 }
@@ -110,3 +110,42 @@ PrintNewArray(array);
 Console.WriteLine();
 Console.WriteLine($"The difference between the maximum and minimum array element = " + TheDifferenceBetweenTheMaximumAndMinimumArrayElement(array));
 */
+
+
+
+// Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
+
+int[] ProductOfPairsOfNumbersInAOneDimensionalArray(int[] array)
+{
+    int a = array.Length - 1;
+    int size = (array.Length + 1) / 2;
+    int[] newArray = new int[size];
+
+    if (array.Length % 2 == 0)
+    {
+        for (int i = 0; i < array.Length - i; i++)
+        {
+            newArray[i] = array[i] * array[a];
+            a -= 1;
+        }
+    }
+    else
+    {
+        for (int i = 0; i < array.Length / 2; i++)
+        {
+            newArray[i] = array[i] * array[a];
+            a -= 1;
+        }
+
+    }
+    return newArray;
+}
+
+
+Console.WriteLine("Input a size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = CreateArray(size);
+PrintArray(array);
+Console.WriteLine();
+int[] newArray = ProductOfPairsOfNumbersInAOneDimensionalArray(array);
+PrintArray(newArray);
