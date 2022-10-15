@@ -72,7 +72,12 @@ double[] CreateNewArray(int size)
 
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(1, 100000);
+        int a = new Random().Next(1, 500);
+        int b = new Random().Next(500, 100000);
+        array[i] = new Random().NextDouble() * (b - a);
+        double x = array[i];
+        x = Math.Round(x, 2);
+        array[i] = x;
     }
     return array;
 }
@@ -100,6 +105,7 @@ double TheDifferenceBetweenTheMaximumAndMinimumArrayElement(double[] array)
     }
 
     double result = max - min;
+    result = Math.Round(result, 2);
     return result;
 }
 
@@ -118,6 +124,7 @@ Console.WriteLine($"The difference between the maximum and minimum array element
 int[] ProductOfPairsOfNumbersInAOneDimensionalArray(int[] array)
 {
     int a = array.Length - 1;
+    int b = array.Length / 2;
     int size = (array.Length + 1) / 2;
     int[] newArray = new int[size];
 
@@ -129,14 +136,14 @@ int[] ProductOfPairsOfNumbersInAOneDimensionalArray(int[] array)
             a -= 1;
         }
     }
-    else
+    if (array.Length % 2 != 0)
     {
         for (int i = 0; i < array.Length / 2; i++)
         {
             newArray[i] = array[i] * array[a];
             a -= 1;
         }
-
+        newArray[b] = array[b];
     }
     return newArray;
 }
