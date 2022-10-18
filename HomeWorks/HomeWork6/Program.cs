@@ -49,7 +49,7 @@ double[] IntersectionPoint(double b1, double k1, double b2, double k2)
 {
     double[] array = new double[2];
 
-    double x = -(b1 -b2) / (k1 - k2);
+    double x = -(b1 - b2) / (k1 - k2);
     double a = k1 * x + b1;
     double b = k2 * x + b2;
 
@@ -58,7 +58,7 @@ double[] IntersectionPoint(double b1, double k1, double b2, double k2)
 
     array[0] = a;
     array[1] = b;
-    
+
     return array;
 }
 
@@ -73,4 +73,4 @@ double k2 = Convert.ToDouble(Console.ReadLine());
 
 double[] array = IntersectionPoint(b1, k1, b2, k2);
 Console.WriteLine();
-Console.WriteLine("Intersection point " + array[0] + " " +array[1]);
+Console.WriteLine("Intersection point " + array[0] + " " + array[1]);
