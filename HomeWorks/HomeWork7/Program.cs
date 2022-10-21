@@ -98,8 +98,7 @@ double[] ArithmeticMean(int[,] array)
 {
     int a = 0;
     double sum = 0;
-    double arithmeticMean = 0;
-    double[] newArray = new double[array.GetLength(0)];
+    double[] newArray = new double[array.GetLength(1)];
 
     for (int j = 0; j < array.GetLength(1); j++)
     {
@@ -107,12 +106,9 @@ double[] ArithmeticMean(int[,] array)
         {
             sum += array[i, j];
         }
-        arithmeticMean = sum / array.GetLength(0);
-        arithmeticMean = Math.Round(arithmeticMean, 2);
-        newArray[a] = arithmeticMean;
+        newArray[a] = Math.Round(sum / array.GetLength(0), 2);
         a++;
         sum = 0;
-        arithmeticMean = 0;
     }
     return newArray;
 }
