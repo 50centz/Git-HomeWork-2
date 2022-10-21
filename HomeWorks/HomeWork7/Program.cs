@@ -69,3 +69,77 @@ void ReturnTheValueOfTheElement(int[,] array, int a, int b)
 
 
 
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            array[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return array;
+}
+
+double[] ArithmeticMean(int[,] array)
+{
+    int a = 0;
+    double sum = 0;
+    double arithmeticMean = 0;
+    double[] newArray = new double[array.GetLength(0)];
+
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            sum += array[i, j];
+        }
+        arithmeticMean = sum / array.GetLength(0);
+        arithmeticMean = Math.Round(arithmeticMean, 2);
+        newArray[a] = arithmeticMean;
+        a++;
+        sum = 0;
+        arithmeticMean = 0;
+    }
+    return newArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void ShowArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + "  ");
+    }
+}
+
+int[,] array = CreateRandom2dArray();
+double[] newArray = ArithmeticMean(array);
+Console.WriteLine();
+Show2dArray(array);
+Console.WriteLine();
+ShowArray(newArray);
