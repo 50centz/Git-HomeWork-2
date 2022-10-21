@@ -44,13 +44,13 @@ Show2dArray(newArray);
 */
 
 
-
+/*
 // Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
 
 void ThereIsNoSuchElement()
 {
-    Console.WriteLine("There is no such element");
+    Console.WriteLine("There are no numbers with such indexes in the array");
 }
 
 void ReturnTheValueOfTheElement(int[,] array, int a, int b)
@@ -65,3 +65,7 @@ void ReturnTheValueOfTheElement(int[,] array, int a, int b)
     }
 
 }
+*/
+
+
+
