@@ -33,8 +33,8 @@ void Show2dArray(int[,] array)
     }
 }
 
+/*
 // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
-
 
 int[,] OrderingArrayElementsInDescendingOrder(int[,] array)
 {
@@ -64,7 +64,7 @@ Show2dArray(myArray);
 Console.WriteLine();
 OrderingArrayElementsInDescendingOrder(myArray);
 Show2dArray(myArray);
-
+*/
 
 /*
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
@@ -143,7 +143,51 @@ Show2dArray(resultArray);
 
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
+int [, ,] CreateNewRandom3dArray()
+{
+    Console.WriteLine("Dimension of the array: ");
+    int size = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter the number of rows: ");
+    int row = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter the number of colums: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
 
+    int[, ,] myArray = new int[size, row, columns];
+
+    for (int i = 0; i < myArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < myArray.GetLength(1); j++)
+        {
+            for (int k = 0; k < myArray.GetLength(2); k++)
+            {
+                myArray[i,j,k] = new Random().Next(10, 100);
+            }            
+        }
+    }
+
+    return myArray;
+}
+
+void Show3DArray(int[ , , ] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.WriteLine("Array № " + (i + 1));
+
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i, j , k]}({i},{j},{k}) "); 
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+int[, ,] myArray3d = CreateNewRandom3dArray();
+Show3DArray(myArray3d);
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
