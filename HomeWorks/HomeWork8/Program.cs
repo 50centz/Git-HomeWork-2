@@ -35,7 +35,7 @@ void Show2dArray(int[,] array)
 
 // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
-
+/*
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 int FindRow(int[,] array)
@@ -69,6 +69,44 @@ int[,] myArray = CreateRandom2dArray();
 int numberRow = FindRow(myArray);
 Console.WriteLine();
 Console.WriteLine($"The smallest sum of elements in {numberRow} lines");
+*/
+
+
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц
+
+int[,] ProductOfTwoMatrices(int[,] arrayA, int[,] arrayB)
+{
+    int[,] resultArray = new int[2, 2];
+
+    if (arrayA.GetLength(1) != arrayB.GetLength(0))
+    {
+        Console.WriteLine("Matrix multiplication is not possible !");
+        return resultArray ;
+    }
+    
+    for (int i = 0; i < arrayA.GetLength(0); i++)
+    {
+        for (int j = 0; j < arrayB.GetLength(1); j++)
+        {
+            resultArray[i, j] = 0;
+
+            for (int k = 0; k < arrayB.GetLength(0); k++)
+            {
+                resultArray[i, j] += arrayA[i, k] * arrayB[k, j];
+            }
+        }
+    }
+    return resultArray;
+}
+
+int[,] arrayA = CreateRandom2dArray();
+int[,] arrayB = CreateRandom2dArray();
+Show2dArray(arrayA);
+Console.WriteLine();
+Show2dArray(arrayB);
+int[,] resultArray = ProductOfTwoMatrices(arrayA, arrayB);
+Console.WriteLine();
+Show2dArray(resultArray);
 
 
 
