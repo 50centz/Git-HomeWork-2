@@ -140,7 +140,7 @@ Console.WriteLine();
 Show2dArray(resultArray);
 */
 
-
+/*
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
 int[,,] CreateNewRandom3dArray()
@@ -224,10 +224,11 @@ void Show3DArray(int[,,] array)
 }
 
 
-
 int[,,] myArray3d = CreateNewRandom3dArray();
 Console.WriteLine();
 Show3DArray(myArray3d);
+*/
+
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
