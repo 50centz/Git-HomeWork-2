@@ -232,3 +232,41 @@ Show3DArray(myArray3d);
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
 
+
+int[,] FillTheArrayInASpiral()
+{
+    Console.WriteLine("Enter the number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter the number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+    int count = 1;
+
+    for (int i = 0; count <= rows * columns; i++)
+    {
+        for (int a = i; a < columns - i; a++)
+        {
+            array[i, a] = count++;
+        }
+        for (int b = i + 1; b < rows - i; b++)
+        {
+            array[b, columns - 1 - i ] = count++;
+        }
+        for (int c = columns - i - 2; c >= i; c--)
+        {
+            array[rows - i - 1, c] = count++;   
+        }
+        for (int d = rows - i - 2; d > i; d--)
+        {
+            array[d, i] = count++;
+        }
+        
+    }
+
+    return array;
+}
+
+
+int[,] array = FillTheArrayInASpiral();
+Show2dArray(array);
