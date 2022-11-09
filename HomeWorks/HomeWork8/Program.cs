@@ -143,7 +143,7 @@ Show2dArray(resultArray);
 
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
-int [, ,] CreateNewRandom3dArray()
+int[,,] CreateNewRandom3dArray()
 {
     Console.WriteLine("Dimension of the array: ");
     int size = Convert.ToInt32(Console.ReadLine());
@@ -152,23 +152,61 @@ int [, ,] CreateNewRandom3dArray()
     Console.WriteLine("Enter the number of colums: ");
     int columns = Convert.ToInt32(Console.ReadLine());
 
-    int[, ,] myArray = new int[size, row, columns];
+    int[,,] myArray = new int[size, row, columns];
+    int[] array = new int[size * row * columns];
 
-    for (int i = 0; i < myArray.GetLength(0); i++)
+    if (size * row * columns < 90)
     {
-        for (int j = 0; j < myArray.GetLength(1); j++)
+        for (int i = 0; i < array.Length; i++)
         {
-            for (int k = 0; k < myArray.GetLength(2); k++)
+            array[i] = new Random().Next(10, 100);
+
+            if (i >= 1)
             {
-                myArray[i,j,k] = new Random().Next(10, 100);
-            }            
+                for (int j = 0; j < i; j++)
+                {
+                    while (array[i] == array[j])
+                    {
+                        array[i] = new Random().Next(10, 100);
+                        j = 0;
+                    }
+                }
+            }
+        }
+        int count = 0;
+        for (int i = 0; i < myArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < myArray.GetLength(1); j++)
+            {
+                for (int k = 0; k < myArray.GetLength(2); k++)
+                {
+                    myArray[i, j, k] = array[count];
+                    count++;
+                }
+            }
+        }
+    }
+    else
+    {
+        Console.WriteLine();
+        Console.WriteLine("The array cannot be filled with non-repeating numbers");
+        for (int i = 0; i < myArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < myArray.GetLength(1); j++)
+            {
+                for (int k = 0; k < myArray.GetLength(2); k++)
+                {
+                    myArray[i, j, k] = new Random().Next(10, 100);
+                }
+            }
         }
     }
 
     return myArray;
 }
 
-void Show3DArray(int[ , , ] array)
+
+void Show3DArray(int[,,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -178,7 +216,7 @@ void Show3DArray(int[ , , ] array)
         {
             for (int k = 0; k < array.GetLength(2); k++)
             {
-                Console.Write($"{array[i, j , k]}({i},{j},{k}) "); 
+                Console.Write($"{array[i, j, k]}({i},{j},{k}) ");
             }
             Console.WriteLine();
         }
@@ -186,7 +224,9 @@ void Show3DArray(int[ , , ] array)
 }
 
 
-int[, ,] myArray3d = CreateNewRandom3dArray();
+
+int[,,] myArray3d = CreateNewRandom3dArray();
+Console.WriteLine();
 Show3DArray(myArray3d);
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
