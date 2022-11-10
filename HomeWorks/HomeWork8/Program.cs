@@ -246,24 +246,24 @@ int[,] FillTheArrayInASpiral()
     for (int i = 0; count <= rows * columns; i++)
     {
         if (count > rows * columns) break;
-        for (int a = i; a < columns - i; a++)
+        for (int a = i; a < columns - i; a++, count++)
         {
-            array[i, a] = count++;
+            array[i, a] = count;
         }
         if (count > rows * columns) break;
-        for (int b = i + 1; b < rows - i; b++)
+        for (int b = i + 1; b < rows - i; b++, count++)
         {
-            array[b, columns - 1 - i ] = count++;
+            array[b, columns - 1 - i ] = count;
         }
         if (count > rows * columns) break;
-        for (int c = columns - i - 2; c >= i; c--)
+        for (int c = columns - i - 2; c >= i; c--,count++)
         {
-            array[rows - i - 1, c] = count++;   
+            array[rows - i - 1, c] = count;   
         }
         if (count > rows * columns) break;
-        for (int d = rows - i - 2; d > i; d--)
+        for (int d = rows - i - 2; d > i; d--,count++)
         {
-            array[d, i] = count++;
+            array[d, i] = count;
         }
         
     }
