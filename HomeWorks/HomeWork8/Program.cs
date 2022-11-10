@@ -245,18 +245,22 @@ int[,] FillTheArrayInASpiral()
 
     for (int i = 0; count <= rows * columns; i++)
     {
+        if (count > rows * columns) break;
         for (int a = i; a < columns - i; a++)
         {
             array[i, a] = count++;
         }
+        if (count > rows * columns) break;
         for (int b = i + 1; b < rows - i; b++)
         {
             array[b, columns - 1 - i ] = count++;
         }
+        if (count > rows * columns) break;
         for (int c = columns - i - 2; c >= i; c--)
         {
             array[rows - i - 1, c] = count++;   
         }
+        if (count > rows * columns) break;
         for (int d = rows - i - 2; d > i; d--)
         {
             array[d, i] = count++;
