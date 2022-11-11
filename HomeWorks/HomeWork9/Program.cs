@@ -34,4 +34,4 @@ int Akker(int m, int n)
     else return Akker(m - 1, Akker(m, n - 1));
 }
 
-Console.WriteLine(Akker(2, 2));
+Console.WriteLine(Akker(1, 2));
