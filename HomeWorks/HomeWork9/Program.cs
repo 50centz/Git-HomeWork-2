@@ -10,30 +10,21 @@ void NaturalNumbersInTheInterval(int a)
 NaturalNumbersInTheInterval(10);
 */
 
-/*
+
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 
-int TheSumOfNaturalElements(int m, int n)
+int SumDigits(int m, int n)
 {
-    int sum = 0;
-
-    Console.Write($"{m} and {n}  ");
-    if (m < n)
-    {
-        m++;
-        TheSumOfNaturalElements(m, n);
-    }
-    sum += m;
-    return sum;
+    if (m > n) return SumDigits(m, n + 1) + n;
+    if (m < n) return SumDigits(m, n - 1) + n;
+    if (m == n) return n;
+    else return 1;
 }
 
-int a = 1;
-int b = 15;
-
-int sum = TheSumOfNaturalElements(a, b);
+int a = SumDigits(4, 8);
 Console.WriteLine();
-Console.WriteLine(sum);
-*/
+Console.WriteLine(a);
+
 
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
