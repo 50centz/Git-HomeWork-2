@@ -52,7 +52,7 @@ PrintNumbers(6, 2);
 
 double PowerAB( double a, double b)
 {
-    if(b < 0) return (1/a) * PowerAB(a, b + 1);  // a ^ 
+    if(b < 0) return (1/a) * PowerAB(a, b + 1);  // a ^ (-2) = 1 / (a * a)
     if(b > 0) return a * PowerAB(a, b - 1);
     else return 1;
 }

@@ -17,11 +17,10 @@ int SumDigits(int m, int n)
 {
     if (m > n) return SumDigits(m, n + 1) + n;
     if (m < n) return SumDigits(m, n - 1) + n;
-    if (m == n) return n;
-    else return 1;
+    else return n;
 }
 
-int a = SumDigits(4, 8);
+int a = SumDigits(15, 1);
 Console.WriteLine();
 Console.WriteLine(a);
 
