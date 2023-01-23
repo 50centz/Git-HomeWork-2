@@ -5,6 +5,7 @@ void NaturalNumbersInTheInterval(int a)
 {
     Console.Write(a + " ");
     if (a > 1) NaturalNumbersInTheInterval(a - 1);
+    Console.Write(" " + a);
 }
 
 NaturalNumbersInTheInterval(10);
@@ -25,6 +26,7 @@ Console.WriteLine();
 Console.WriteLine(a);
 */
 
+/*
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
 int Akker(int m, int n)
@@ -34,4 +36,28 @@ int Akker(int m, int n)
     else return Akker(m - 1, Akker(m, n - 1));
 }
 
-Console.WriteLine(Akker(1, 2));
+Console.WriteLine(Akker(4, 1));
+*/
+
+
+// Реализовать вывод массива с помощью рекурсии
+
+int[] array = new int[10];
+
+for (int i = 0; i < array.Length; i++)
+{
+    array[i] = new Random().Next(1, 10);
+}
+
+void PrintArray(int[] array, int i)
+{   
+    if(i >= 8) return;
+    
+    Console.Write(array[i] + " ");
+    i++;
+    
+    PrintArray(array, i);
+    Console.Write(" " + array[i]);
+}
+
+PrintArray(array, 0);
