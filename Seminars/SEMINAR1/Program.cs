@@ -5,7 +5,7 @@ int n1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input a second number: ");
 int n2 = Convert.ToInt32(Console.ReadLine());
 
-int quad2 = n2 * n2;
+int quad2 = n2 * n2;;
 
 if (n1 == quad2)
 {
